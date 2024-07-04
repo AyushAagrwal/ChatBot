@@ -269,4 +269,5 @@ def internal_error(e):
     return render_template('error.html'), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
